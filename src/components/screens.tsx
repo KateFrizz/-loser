@@ -256,11 +256,11 @@ export function Registration({ onContinue }: { onContinue: () => void }) {
   return (
     <main className="flex min-h-dvh flex-col">
       <DesktopNav />
-      <section className="mx-auto flex w-full max-w-[480px] flex-1 flex-col items-center gap-3.5 px-5 pb-6 pt-4 lg:max-w-none lg:flex-row lg:justify-center lg:gap-12 lg:px-[120px] lg:pb-14 lg:pt-0">
+      <section className="mx-auto flex w-full max-w-[480px] flex-1 flex-col items-center gap-3.5 px-5 pb-6 pt-4 lg:max-w-none lg:flex-row lg:justify-center lg:gap-8 lg:px-[120px] lg:pb-14 lg:pt-0 lg:min-[1440px]:gap-12">
         <span className="lg:hidden"><Logo /></span>
-        <div className="flex w-full flex-col items-center gap-3.5 lg:w-auto lg:flex-row lg:gap-10">
-          <PlanIllustration className="w-[180px] lg:w-[264px]" />
-          <div className="flex w-full flex-col gap-3.5 lg:w-[420px] lg:gap-5">
+        <div className="flex w-full flex-col items-center gap-3.5 lg:w-auto lg:min-w-0 lg:flex-1 lg:flex-row lg:justify-end lg:gap-8 lg:min-[1440px]:gap-10">
+          <PlanIllustration className="w-[180px] shrink-0 lg:w-[200px] lg:max-[1199px]:hidden lg:min-[1440px]:w-[264px]" />
+          <div className="flex w-full flex-col gap-3.5 lg:w-auto lg:min-w-0 lg:max-w-[420px] lg:flex-1 lg:gap-5">
             <h1 className="t-h1 text-center text-ink lg:t-h1-d lg:text-left">Your plan is ready.<br />Time to take action!</h1>
             <p className="t-body text-center text-muted lg:t-body-d lg:text-left">Save your personalized plan and try your first exercise for free.</p>
             <Card tone="lavender" className="py-4">
@@ -271,13 +271,13 @@ export function Registration({ onContinue }: { onContinue: () => void }) {
           </div>
         </div>
         <span className="hidden h-[420px] w-px bg-line lg:block" />
-        <div className="flex w-full flex-col items-center gap-2.5 lg:w-[376px] lg:gap-3">
+        <div className="flex w-full flex-col items-center gap-2.5 lg:w-[340px] lg:shrink-0 lg:gap-3 lg:min-[1440px]:w-[376px]">
           {social.map((s) => (
             <button
               key={s.label}
               onClick={onContinue}
               className={cx(
-                "t-btn flex h-[52px] w-full items-center justify-center gap-3 rounded-[18px] transition-colors focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-primary-light",
+                "t-btn flex h-[52px] w-full items-center justify-center gap-3 whitespace-nowrap rounded-[18px] transition-colors focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-primary-light",
                 s.primary ? "bg-primary text-white hover:bg-primary-dark" : "border-[1.5px] border-line bg-surface text-ink hover:border-primary-light",
               )}
             >
