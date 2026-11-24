@@ -56,13 +56,13 @@ export function Landing({ onStart }: { onStart: () => void }) {
       <Glow className="-top-32 left-52 size-[360px] lg:left-[900px] lg:-top-64 lg:size-[700px]" />
 
       {/* Desktop nav */}
-      <header className="relative hidden items-center justify-between px-[120px] py-7 lg:flex">
+      <header className="relative hidden items-center justify-between px-16 py-7 lg:flex min-[1440px]:px-[120px]">
         <div className="flex items-center gap-5">
           <Logo dark />
-          <span className="h-5 w-px bg-white/30" />
-          <span className="t-label text-white/80">AI Communication Coach</span>
+          <span className="hidden h-5 w-px bg-white/30 xl:block" />
+          <span className="t-label hidden text-white/80 xl:block">AI Communication Coach</span>
         </div>
-        <nav className="t-label flex gap-9 text-white/85" aria-label="Sections">
+        <nav className="t-label hidden gap-9 text-white/85 xl:flex" aria-label="Sections">
           {["About", "How it works", "Paths", "Results", "Reviews"].map((l) => <span key={l}>{l}</span>)}
         </nav>
         <div className="flex items-center gap-6">
@@ -104,26 +104,26 @@ export function Landing({ onStart }: { onStart: () => void }) {
       </div>
 
       {/* Desktop hero */}
-      <div className="relative hidden items-center gap-10 px-[120px] pb-14 pt-4 lg:flex">
-        <div className="flex w-[520px] shrink-0 flex-col gap-6">
+      <div className="relative hidden items-center gap-10 px-16 pb-14 pt-4 lg:flex min-[1440px]:px-[120px]">
+        <div className="flex w-[440px] shrink-0 flex-col gap-6 min-[1440px]:w-[520px]">
           {Chip}
           {Headline}
           <p className="t-body-d text-white/80">Build communication skills, understand yourself and others, and create healthy relationships in every area of life.</p>
-          <Button variant="lime" onClick={onStart} className="w-[380px]">Take the quiz — find your path</Button>
+          <Button variant="lime" onClick={onStart} className="w-full max-w-[380px]">Take the quiz — find your path</Button>
           <ul className="flex gap-8">
             {Features.map(({ icon: I, label }) => (
               <li key={label} className="t-caption flex items-center gap-2.5 text-white/85"><I size={24} className="text-lime" aria-hidden />{label}</li>
             ))}
           </ul>
         </div>
-        <div className="relative h-[660px] w-[640px] shrink-0">
+        <div className="relative aspect-[640/660] min-w-0 max-w-[640px] flex-1">
           <Squiggle className="absolute -left-8 top-0 size-12" />
-          <Photo src="/img/man.jpg" alt="Young man explaining his thoughts" className="absolute left-[380px] top-0 h-[410px] w-[260px] border-4 border-lime" radius="70px 170px 60px 170px" />
-          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="absolute left-10 top-[330px] h-[300px] w-[410px] border-4 border-lime" radius="60px 70px 170px 60px" />
-          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="absolute left-0 top-10 h-[300px] w-[390px] border-4 border-primary-light" radius="170px 60px 70px 60px" />
-          <div className="absolute left-[400px] top-[420px] w-[232px] rounded-3xl bg-white/95 p-5 text-primary">
+          <Photo src="/img/man.jpg" alt="Young man explaining his thoughts" className="absolute left-[59.4%] top-0 h-[62.1%] w-[40.6%] border-4 border-lime" radius="70px 170px 60px 170px" />
+          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="absolute left-[6.25%] top-[50%] h-[45.5%] w-[64.1%] border-4 border-lime" radius="60px 70px 170px 60px" />
+          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="absolute left-0 top-[6.1%] h-[45.5%] w-[60.9%] border-4 border-primary-light" radius="170px 60px 70px 60px" />
+          <div className="absolute left-[62.5%] top-[63.6%] w-[36.25%] rounded-3xl bg-white/95 p-4 text-primary min-[1440px]:p-5">
             <BarChart3 size={24} aria-hidden />
-            <p className="t-h1-d mt-1">2 min</p>
+            <p className="t-h1 mt-1 min-[1440px]:t-h1-d">2 min</p>
             <p className="t-answer text-muted">to get your personal communication plan</p>
           </div>
         </div>
