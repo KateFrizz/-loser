@@ -111,8 +111,8 @@ export function Badge({ children }: { children: ReactNode }) {
 
 /** Photo with organic radius. Falls back to a lavender gradient if the file is missing. */
 export function Photo({
-  src, alt, radius, className, style, focus = "50% 25%",
-}: { src: string; alt: string; radius?: string; className?: string; style?: CSSProperties; focus?: string }) {
+  src, alt, radius, className, style,
+}: { src: string; alt: string; radius?: string; className?: string; style?: CSSProperties }) {
   const [failed, setFailed] = useState(false);
   return (
     <div
@@ -121,7 +121,7 @@ export function Photo({
     >
       {!failed && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} onError={() => setFailed(true)} className="block size-full object-cover" style={{ objectPosition: focus }} />
+        <img src={src} alt={alt} onError={() => setFailed(true)} className="block size-full object-cover" />
       )}
     </div>
   );
