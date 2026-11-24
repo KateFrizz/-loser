@@ -12,7 +12,7 @@ function CtaBar({ children, className }: { children: ReactNode; className?: stri
   return (
     <div className={cx(
       "sticky bottom-0 z-10 -mx-5 mt-auto bg-gradient-to-t from-bg from-70% to-transparent px-5 pt-4 pb-[max(28px,env(safe-area-inset-bottom))]",
-      "xl:static xl:mx-0 xl:mt-0 xl:bg-none xl:p-0",
+      "lg:static lg:mx-0 lg:mt-0 lg:bg-none lg:p-0",
       className,
     )}>
       {children}
@@ -22,7 +22,7 @@ function CtaBar({ children, className }: { children: ReactNode; className?: stri
 
 function DesktopNav({ right, dark }: { right?: ReactNode; dark?: boolean }) {
   return (
-    <header className="hidden items-center justify-between px-16 min-[1440px]:px-[120px] py-7 xl:flex">
+    <header className="hidden items-center justify-between px-[120px] py-7 lg:flex">
       <Logo dark={dark} />
       {right}
     </header>
@@ -38,25 +38,25 @@ const Features = [
 /* ───────────────────────────── Landing ───────────────────────────── */
 export function Landing({ onStart }: { onStart: () => void }) {
   const Headline = (
-    <h1 className="t-hero text-white xl:t-hero-d">
+    <h1 className="t-hero text-white lg:t-hero-d">
       Confident communication starts with
       <span className="mt-1.5 block">
-        <span className="inline-block -rotate-2 rounded-[18px] bg-lime px-3.5 pb-1 pt-0.5 text-primary xl:rounded-[22px] xl:px-5 xl:pb-1.5">you.</span>
+        <span className="inline-block -rotate-2 rounded-[18px] bg-lime px-3.5 pb-1 pt-0.5 text-primary lg:rounded-[22px] lg:px-5 lg:pb-1.5">you.</span>
       </span>
     </h1>
   );
   const Chip = (
-    <span className="t-label inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-[7px] text-white xl:px-3.5 xl:py-2">
+    <span className="t-label inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-[7px] text-white lg:px-3.5 lg:py-2">
       <Sparkles size={16} className="text-lime" aria-hidden /> AI Communication Coach
     </span>
   );
   return (
     <main className="bg-closer relative min-h-dvh overflow-hidden text-white">
-      <Glow className="-left-36 top-96 size-[420px] xl:-left-52 xl:size-[700px]" />
-      <Glow className="-top-32 left-52 size-[360px] xl:left-[900px] xl:-top-64 xl:size-[700px]" />
+      <Glow className="-left-36 top-96 size-[420px] lg:-left-52 lg:size-[700px]" />
+      <Glow className="-top-32 left-52 size-[360px] lg:left-[900px] lg:-top-64 lg:size-[700px]" />
 
       {/* Desktop nav */}
-      <header className="relative hidden items-center justify-between px-16 min-[1440px]:px-[120px] py-7 xl:flex">
+      <header className="relative hidden items-center justify-between px-[120px] py-7 lg:flex">
         <div className="flex items-center gap-5">
           <Logo dark />
           <span className="h-5 w-px bg-white/30" />
@@ -74,7 +74,7 @@ export function Landing({ onStart }: { onStart: () => void }) {
       </header>
 
       {/* Mobile */}
-      <div className="relative mx-auto flex min-h-dvh max-w-[480px] flex-col px-5 pt-5 xl:hidden">
+      <div className="relative mx-auto flex min-h-dvh max-w-[480px] flex-col px-5 pt-5 lg:hidden">
         <div className="flex items-center justify-between">
           <Logo dark />
           <Menu size={28} aria-hidden />
@@ -87,9 +87,9 @@ export function Landing({ onStart }: { onStart: () => void }) {
           </div>
           <p className="t-body text-white/80">Build communication skills, understand yourself and others, and create healthy relationships.</p>
         </div>
-        <div className="mt-4 flex shrink-0 flex-col">
-          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="90px 28px 28px 28px" />
-          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="-mt-[50px] ml-6 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="28px 28px 90px 28px" />
+        <div className="relative mt-4 h-[250px] flex-1">
+          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="absolute left-0 top-0 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="90px 28px 28px 28px" />
+          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="absolute bottom-0 right-0 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="28px 28px 90px 28px" />
         </div>
         <CtaBar className="from-transparent bg-none">
           <Button variant="lime" onClick={onStart}>Take the quiz — find your path</Button>
@@ -104,7 +104,7 @@ export function Landing({ onStart }: { onStart: () => void }) {
       </div>
 
       {/* Desktop hero */}
-      <div className="relative hidden items-center gap-10 px-16 min-[1440px]:px-[120px] pb-14 pt-4 xl:flex">
+      <div className="relative hidden items-center gap-10 px-[120px] pb-14 pt-4 lg:flex">
         <div className="flex w-[520px] shrink-0 flex-col gap-6">
           {Chip}
           {Headline}
@@ -116,14 +116,14 @@ export function Landing({ onStart }: { onStart: () => void }) {
             ))}
           </ul>
         </div>
-        <div className="relative aspect-[640/660] w-full max-w-[640px] flex-1">
+        <div className="relative h-[660px] w-[640px] shrink-0">
           <Squiggle className="absolute -left-8 top-0 size-12" />
-          <Photo src="/img/man.jpg" alt="Young man explaining his thoughts" className="absolute left-[59.4%] top-0 h-[62.1%] w-[40.6%] border-4 border-lime" radius="70px 170px 60px 170px" />
-          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="absolute left-[6.25%] top-[50%] h-[45.5%] w-[64.1%] border-4 border-lime" radius="60px 70px 170px 60px" />
-          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="absolute left-0 top-[6.1%] h-[45.5%] w-[60.9%] border-4 border-primary-light" radius="170px 60px 70px 60px" />
-          <div className="absolute left-[62.5%] top-[63.6%] w-[36.25%] rounded-3xl bg-white/95 p-4 text-primary min-[1440px]:p-5">
+          <Photo src="/img/man.jpg" alt="Young man explaining his thoughts" className="absolute left-[380px] top-0 h-[410px] w-[260px] border-4 border-lime" radius="70px 170px 60px 170px" />
+          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="absolute left-10 top-[330px] h-[300px] w-[410px] border-4 border-lime" radius="60px 70px 170px 60px" />
+          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="absolute left-0 top-10 h-[300px] w-[390px] border-4 border-primary-light" radius="170px 60px 70px 60px" />
+          <div className="absolute left-[400px] top-[420px] w-[232px] rounded-3xl bg-white/95 p-5 text-primary">
             <BarChart3 size={24} aria-hidden />
-            <p className="t-h1 mt-1 min-[1440px]:t-h1-d">2 min</p>
+            <p className="t-h1-d mt-1">2 min</p>
             <p className="t-answer text-muted">to get your personal communication plan</p>
           </div>
         </div>
@@ -151,31 +151,31 @@ export function QuizStep({
 
   return (
     <main className="flex min-h-dvh flex-col">
-      <header className="mx-auto w-full max-w-[480px] px-5 pt-4 xl:max-w-none xl:px-16 min-[1440px]:px-[120px] xl:py-7">
+      <header className="mx-auto w-full max-w-[480px] px-5 pt-4 lg:max-w-none lg:px-[120px] lg:py-7">
         <div className="flex items-center justify-between">
-          <span className="xl:hidden"><BackButton onClick={onBack} /></span>
-          <span className="hidden xl:block xl:w-[200px]"><Logo /></span>
+          <span className="lg:hidden"><BackButton onClick={onBack} /></span>
+          <span className="hidden lg:block lg:w-[200px]"><Logo /></span>
           <div className="flex items-center gap-4">
-            <div className="hidden w-[320px] xl:block"><Progress step={step} /></div>
+            <div className="hidden w-[320px] lg:block"><Progress step={step} /></div>
             <span className="t-label text-ink">{step} of 6</span>
           </div>
-          <span className="size-11 xl:h-px xl:w-[200px]" />
+          <span className="size-11 lg:h-px lg:w-[200px]" />
         </div>
-        <Progress step={step} className="mt-3.5 xl:hidden" />
+        <Progress step={step} className="mt-3.5 lg:hidden" />
       </header>
 
-      <section className="mx-auto flex w-full max-w-[480px] flex-1 flex-col px-5 pt-6 xl:max-w-none xl:items-center xl:justify-center xl:px-16 min-[1440px]:px-[120px] xl:pb-14 xl:pt-0">
-        <div key={index} className="anim-in flex w-full flex-col gap-6 xl:w-[960px] xl:items-center xl:gap-8">
+      <section className="mx-auto flex w-full max-w-[480px] flex-1 flex-col px-5 pt-6 lg:max-w-none lg:items-center lg:justify-center lg:px-[120px] lg:pb-14 lg:pt-0">
+        <div key={index} className="anim-in flex w-full flex-col gap-6 lg:w-[960px] lg:items-center lg:gap-8">
           {q.photo && (
-            <Photo src={q.photo} alt="" className="h-[170px] w-full rounded-[28px_72px_28px_28px] xl:h-[190px] xl:rounded-[40px_120px_40px_40px]" />
+            <Photo src={q.photo} alt="" className="h-[170px] w-full rounded-[28px_72px_28px_28px] lg:h-[190px] lg:rounded-[40px_120px_40px_40px]" />
           )}
-          <h1 className="t-q text-ink xl:t-q-d xl:text-center">{q.title}</h1>
-          <div role="radiogroup" aria-label={q.title} className="grid gap-3 xl:w-full xl:grid-cols-3 xl:gap-6">
+          <h1 className="t-q text-ink lg:t-q-d lg:text-center">{q.title}</h1>
+          <div role="radiogroup" aria-label={q.title} className="grid gap-3 lg:w-full lg:grid-cols-3 lg:gap-6">
             {q.answers.map((a, i) => (
-              <AnswerCard key={a.label} label={a.label} icon={a.icon} selected={value === i} onClick={() => onSelect(i)} className="xl:h-full" />
+              <AnswerCard key={a.label} label={a.label} icon={a.icon} selected={value === i} onClick={() => onSelect(i)} className="lg:h-full" />
             ))}
           </div>
-          <div className="hidden flex-col items-center gap-4 xl:flex">
+          <div className="hidden flex-col items-center gap-4 lg:flex">
             <div className="flex gap-4">
               <Button variant="secondary" arrow={false} onClick={onBack} className="w-40">Back</Button>
               <Button onClick={onNext} disabled={value === null} className="w-[260px]">{last ? "Show my result" : "Next"}</Button>
@@ -183,7 +183,7 @@ export function QuizStep({
             <p className="t-caption text-muted">Press 1–3 to choose · Enter to continue</p>
           </div>
         </div>
-        <CtaBar className="xl:hidden">
+        <CtaBar className="lg:hidden">
           <Button onClick={onNext} disabled={value === null}>{last ? "Show my result" : "Next"}</Button>
         </CtaBar>
       </section>
@@ -198,10 +198,10 @@ export function Loading({ onDone }: { onDone: () => void }) {
     <main className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-5 text-center" aria-live="polite">
       <Glow className="-left-32 -top-24 size-[420px]" />
       <div className="anim-float relative">
-        <PlanIllustration className="w-[220px] xl:w-[280px]" />
+        <PlanIllustration className="w-[220px] lg:w-[280px]" />
       </div>
-      <h1 className="t-h1 mt-6 text-ink xl:t-h1-d">Building your personal plan…</h1>
-      <p className="t-body mt-3 max-w-[320px] text-muted xl:t-body-d xl:max-w-none">Matching your answers with the right practice.</p>
+      <h1 className="t-h1 mt-6 text-ink lg:t-h1-d">Building your personal plan…</h1>
+      <p className="t-body mt-3 max-w-[320px] text-muted lg:t-body-d lg:max-w-none">Matching your answers with the right practice.</p>
       <div className="mt-8 h-1.5 w-[240px] overflow-hidden rounded-full bg-primary-light/25">
         <div className="anim-fill h-full rounded-full bg-primary" />
       </div>
@@ -213,31 +213,31 @@ export function Loading({ onDone }: { onDone: () => void }) {
 export function Result({ segment, plan, onNext }: { segment: Segment; plan: string; onNext: () => void }) {
   return (
     <main className="relative flex min-h-dvh flex-col overflow-hidden">
-      <Glow className="-left-32 top-10 size-[320px] xl:-left-48 xl:-top-48 xl:size-[600px]" />
+      <Glow className="-left-32 top-10 size-[320px] lg:-left-48 lg:-top-48 lg:size-[600px]" />
       <DesktopNav right={<Badge>Your result</Badge>} />
-      <section className="relative mx-auto flex w-full max-w-[480px] flex-1 flex-col gap-5 px-5 pt-5 xl:max-w-none xl:flex-row xl:items-center xl:gap-20 xl:px-16 min-[1440px]:px-[120px] xl:pb-14 xl:pt-0">
-        <div className="flex flex-col gap-5 xl:w-[580px] xl:shrink-0 xl:gap-4">
-          <div className="flex items-center gap-3 xl:block">
-            <div className="flex flex-1 flex-col gap-2 xl:gap-4">
-              <span className="xl:hidden"><Badge>Your result</Badge></span>
-              <p className="t-hero text-primary xl:t-hero-d">{segment.name}</p>
-              <h1 className="t-section text-ink xl:t-q-d">{segment.subtitle}</h1>
+      <section className="relative mx-auto flex w-full max-w-[480px] flex-1 flex-col gap-5 px-5 pt-5 lg:max-w-none lg:flex-row lg:items-center lg:gap-20 lg:px-[120px] lg:pb-14 lg:pt-0">
+        <div className="flex flex-col gap-5 lg:w-[580px] lg:shrink-0 lg:gap-4">
+          <div className="flex items-center gap-3 lg:block">
+            <div className="flex flex-1 flex-col gap-2 lg:gap-4">
+              <span className="lg:hidden"><Badge>Your result</Badge></span>
+              <p className="t-hero text-primary lg:t-hero-d">{segment.name}</p>
+              <h1 className="t-section text-ink lg:t-q-d">{segment.subtitle}</h1>
             </div>
-            <Photo src={segment.photo} alt="" className="h-[176px] w-[132px] shrink-0 xl:hidden" radius="66px 20px 66px 20px" />
+            <Photo src={segment.photo} alt="" className="h-[176px] w-[132px] shrink-0 lg:hidden" radius="66px 20px 66px 20px" />
           </div>
-          <p className="t-body text-muted xl:t-body-d">{segment.description}</p>
-          <Photo src={segment.photo} alt="" className="hidden h-[300px] w-full xl:block" radius="150px 40px 150px 40px" />
+          <p className="t-body text-muted lg:t-body-d">{segment.description}</p>
+          <Photo src={segment.photo} alt="" className="hidden h-[300px] w-full lg:block" radius="150px 40px 150px 40px" />
         </div>
-        <div className="flex flex-1 flex-col gap-5 xl:gap-5">
-          <Card className="xl:rounded-3xl xl:p-7">
+        <div className="flex flex-1 flex-col gap-5 lg:gap-5">
+          <Card className="lg:rounded-3xl lg:p-7">
             <h2 className="t-card text-ink">What you&apos;ll get</h2>
-            <ul className="mt-3 flex flex-col gap-3 xl:mt-4 xl:gap-4">
+            <ul className="mt-3 flex flex-col gap-3 lg:mt-4 lg:gap-4">
               {segment.benefits.map((b) => <CheckItem key={b}>{b}</CheckItem>)}
             </ul>
           </Card>
-          <Card tone="lavender" className="py-4 xl:rounded-3xl xl:px-7 xl:py-6">
+          <Card tone="lavender" className="py-4 lg:rounded-3xl lg:px-7 lg:py-6">
             <p className="t-label text-primary">Your plan</p>
-            <p className="t-body mt-1 text-ink xl:t-body-d">{plan}</p>
+            <p className="t-body mt-1 text-ink lg:t-body-d">{plan}</p>
           </Card>
           <CtaBar><Button onClick={onNext}>Start free practice</Button></CtaBar>
         </div>
@@ -256,13 +256,13 @@ export function Registration({ onContinue }: { onContinue: () => void }) {
   return (
     <main className="flex min-h-dvh flex-col">
       <DesktopNav />
-      <section className="mx-auto flex w-full max-w-[480px] flex-1 flex-col items-center gap-3.5 px-5 pb-6 pt-4 xl:max-w-none xl:flex-row xl:justify-center xl:gap-10 min-[1440px]:gap-12 xl:px-16 min-[1440px]:px-[120px] xl:pb-14 xl:pt-0">
-        <span className="xl:hidden"><Logo /></span>
-        <div className="flex w-full flex-col items-center gap-3.5 xl:w-auto xl:flex-row xl:gap-10">
-          <PlanIllustration className="w-[180px] xl:w-[220px] min-[1440px]:w-[264px]" />
-          <div className="flex w-full flex-col gap-3.5 xl:w-[420px] xl:gap-5">
-            <h1 className="t-h1 text-center text-ink xl:t-h1-d xl:text-left">Your plan is ready.<br />Time to take action!</h1>
-            <p className="t-body text-center text-muted xl:t-body-d xl:text-left">Save your personalized plan and try your first exercise for free.</p>
+      <section className="mx-auto flex w-full max-w-[480px] flex-1 flex-col items-center gap-3.5 px-5 pb-6 pt-4 lg:max-w-none lg:flex-row lg:justify-center lg:gap-12 lg:px-[120px] lg:pb-14 lg:pt-0">
+        <span className="lg:hidden"><Logo /></span>
+        <div className="flex w-full flex-col items-center gap-3.5 lg:w-auto lg:flex-row lg:gap-10">
+          <PlanIllustration className="w-[180px] lg:w-[264px]" />
+          <div className="flex w-full flex-col gap-3.5 lg:w-[420px] lg:gap-5">
+            <h1 className="t-h1 text-center text-ink lg:t-h1-d lg:text-left">Your plan is ready.<br />Time to take action!</h1>
+            <p className="t-body text-center text-muted lg:t-body-d lg:text-left">Save your personalized plan and try your first exercise for free.</p>
             <Card tone="lavender" className="py-4">
               <ul className="flex flex-col gap-3">
                 {["Your personalized growth path", "Practice at your own pace", "Track your progress"].map((b) => <CheckItem key={b}>{b}</CheckItem>)}
@@ -270,8 +270,8 @@ export function Registration({ onContinue }: { onContinue: () => void }) {
             </Card>
           </div>
         </div>
-        <span className="hidden h-[420px] w-px bg-line xl:block" />
-        <div className="flex w-full flex-col items-center gap-2.5 xl:w-[376px] xl:gap-3">
+        <span className="hidden h-[420px] w-px bg-line lg:block" />
+        <div className="flex w-full flex-col items-center gap-2.5 lg:w-[376px] lg:gap-3">
           {social.map((s) => (
             <button
               key={s.label}
@@ -318,32 +318,32 @@ export function Practice({ segment, onBack, onNext }: { segment: Segment; onBack
   return (
     <main className="flex min-h-dvh flex-col">
       <DesktopNav right={<div className="flex items-center gap-3"><span className="t-label text-muted">Free practice</span><BackButton onClick={onBack} /></div>} />
-      <section className="mx-auto flex w-full max-w-[480px] flex-1 flex-col gap-5 px-5 pt-4 xl:max-w-none xl:flex-row xl:items-start xl:justify-center xl:gap-14 xl:px-16 min-[1440px]:px-[120px] xl:pb-14 xl:pt-4">
-        <div className="flex items-center gap-3 xl:hidden">
+      <section className="mx-auto flex w-full max-w-[480px] flex-1 flex-col gap-5 px-5 pt-4 lg:max-w-none lg:flex-row lg:items-start lg:justify-center lg:gap-14 lg:px-[120px] lg:pb-14 lg:pt-4">
+        <div className="flex items-center gap-3 lg:hidden">
           <BackButton onClick={onBack} />
           <span className="t-label text-muted">Free practice</span>
         </div>
-        <div className="flex flex-col gap-5 xl:w-[760px] xl:gap-6">
+        <div className="flex flex-col gap-5 lg:w-[760px] lg:gap-6">
           <div className="flex flex-col gap-3">
-            <h1 className="t-h1 text-ink xl:t-h1-d">{segment.practiceTitle}</h1>
-            <p className="t-body text-muted xl:t-body-d">Talk with your AI coach in a safe space and get an instant tip.</p>
+            <h1 className="t-h1 text-ink lg:t-h1-d">{segment.practiceTitle}</h1>
+            <p className="t-body text-muted lg:t-body-d">Talk with your AI coach in a safe space and get an instant tip.</p>
           </div>
-          <div className="flex flex-col gap-3 rounded-3xl border border-line bg-surface p-4 xl:gap-3.5 xl:p-6" aria-live="polite">
+          <div className="flex flex-col gap-3 rounded-3xl border border-line bg-surface p-4 lg:gap-3.5 lg:p-6" aria-live="polite">
             {segment.steps.slice(0, current + 1).map((s, si) => {
               const chosen = picks[si];
               const opt = chosen !== null ? s.options[chosen] : null;
               return (
                 <div key={si} className="flex flex-col gap-3">
-                  <div className="anim-in flex flex-col gap-1.5 pr-7 xl:pr-[120px]">
+                  <div className="anim-in flex flex-col gap-1.5 pr-7 lg:pr-[120px]">
                     <span className="t-caption text-muted">{segment.sender}</span>
-                    <p className="t-body rounded-[6px_18px_18px_18px] bg-lavender px-3.5 py-3 text-ink xl:px-4 xl:py-3.5">{s.prompt}</p>
+                    <p className="t-body rounded-[6px_18px_18px_18px] bg-lavender px-3.5 py-3 text-ink lg:px-4 lg:py-3.5">{s.prompt}</p>
                   </div>
                   {opt && (
                     <>
-                      <div className="anim-in flex justify-end pl-7 xl:pl-[120px]">
-                        <p className="t-body rounded-[18px_6px_18px_18px] bg-primary px-3.5 py-3 text-white xl:px-4 xl:py-3.5">{opt.text}</p>
+                      <div className="anim-in flex justify-end pl-7 lg:pl-[120px]">
+                        <p className="t-body rounded-[18px_6px_18px_18px] bg-primary px-3.5 py-3 text-white lg:px-4 lg:py-3.5">{opt.text}</p>
                       </div>
-                      <p className={cx("anim-in t-answer rounded-2xl px-3.5 py-3 text-ink xl:px-4", opt.best ? "bg-lime" : "border border-line bg-[#fbfaff]")}>
+                      <p className={cx("anim-in t-answer rounded-2xl px-3.5 py-3 text-ink lg:px-4", opt.best ? "bg-lime" : "border border-line bg-[#fbfaff]")}>
                         {opt.best ? "Tip: " : "Try this: "}{opt.tip}
                       </p>
                     </>
@@ -375,8 +375,8 @@ export function Practice({ segment, onBack, onNext }: { segment: Segment; onBack
             <div ref={endRef} />
           </div>
         </div>
-        <div className="flex flex-col gap-5 xl:w-auto xl:flex-1">
-          <Card className="hidden xl:block xl:rounded-3xl xl:p-7">
+        <div className="flex flex-col gap-5 lg:w-auto lg:flex-1">
+          <Card className="hidden lg:block lg:rounded-3xl lg:p-7">
             <h2 className="t-card text-ink">How it works</h2>
             <ol className="mt-4 flex flex-col gap-4">
               {Steps.map((s) => (
@@ -409,35 +409,35 @@ export function Premium({ segment, minutes, onBack }: { segment: Segment; minute
   const terms = "Renews automatically at $9.99/month after the first month. Cancel anytime.";
   return (
     <main className="relative flex min-h-dvh flex-col overflow-hidden">
-      <Glow className="-top-16 left-40 size-[320px] xl:left-[900px] xl:-top-48 xl:size-[700px]" />
+      <Glow className="-top-16 left-40 size-[320px] lg:left-[900px] lg:-top-48 lg:size-[700px]" />
       <DesktopNav right={<BackButton onClick={onBack} />} />
-      <section className="relative mx-auto flex w-full max-w-[480px] flex-1 flex-col gap-5 px-5 pt-4 xl:max-w-none xl:flex-row xl:items-center xl:gap-20 xl:px-16 min-[1440px]:px-[120px] xl:pb-14 xl:pt-0">
-        <span className="xl:hidden"><BackButton onClick={onBack} /></span>
-        <div className="flex flex-col gap-5 xl:flex-1">
+      <section className="relative mx-auto flex w-full max-w-[480px] flex-1 flex-col gap-5 px-5 pt-4 lg:max-w-none lg:flex-row lg:items-center lg:gap-20 lg:px-[120px] lg:pb-14 lg:pt-0">
+        <span className="lg:hidden"><BackButton onClick={onBack} /></span>
+        <div className="flex flex-col gap-5 lg:flex-1">
           <div className="flex flex-col gap-3">
             <Badge>{segment.name} · {minutes} min a day</Badge>
-            <h1 className="t-h1 text-ink xl:t-h1-d">Your personal growth plan</h1>
-            <p className="t-body text-muted xl:t-body-d">Everything you need for daily practice with your AI coach.</p>
+            <h1 className="t-h1 text-ink lg:t-h1-d">Your personal growth plan</h1>
+            <p className="t-body text-muted lg:t-body-d">Everything you need for daily practice with your AI coach.</p>
           </div>
-          <Card className="xl:rounded-3xl xl:p-7">
+          <Card className="lg:rounded-3xl lg:p-7">
             <h2 className="t-card text-ink">What&apos;s included in Premium</h2>
-            <ul className="mt-3.5 flex flex-col gap-3.5 xl:mt-4 xl:gap-4">
+            <ul className="mt-3.5 flex flex-col gap-3.5 lg:mt-4 lg:gap-4">
               {["AI coach and real-life conversation practice", "Self-reflection journal", "New exercises and scenarios every week", "Progress tracking"].map((b) => <CheckItem key={b}>{b}</CheckItem>)}
             </ul>
           </Card>
         </div>
-        <div className="bg-closer flex flex-col gap-3 rounded-3xl p-5 text-white xl:w-[480px] xl:shrink-0 xl:gap-5 xl:rounded-[32px] xl:p-9">
+        <div className="bg-closer flex flex-col gap-3 rounded-3xl p-5 text-white lg:w-[480px] lg:shrink-0 lg:gap-5 lg:rounded-[32px] lg:p-9">
           <Badge>Special offer</Badge>
           <p className="flex flex-wrap items-baseline gap-x-2.5">
             <span className="t-card text-white/60 line-through">$9.99</span>
-            <span className="t-hero xl:t-hero-d">$3.99</span>
+            <span className="t-hero lg:t-hero-d">$3.99</span>
             <span className="t-answer text-white/90">for the first month</span>
           </p>
           <p className="t-caption text-white/75">Then $9.99/month · or $79.99/year</p>
-          <div className="hidden xl:block"><Button variant="lime" onClick={() => setOpen(true)}>Get my plan for $3.99</Button></div>
-          <p className="t-caption hidden text-white/70 xl:block">{terms}</p>
+          <div className="hidden lg:block"><Button variant="lime" onClick={() => setOpen(true)}>Get my plan for $3.99</Button></div>
+          <p className="t-caption hidden text-white/70 lg:block">{terms}</p>
         </div>
-        <CtaBar className="xl:hidden">
+        <CtaBar className="lg:hidden">
           <Button onClick={() => setOpen(true)}>Get my plan for $3.99</Button>
           <p className="t-caption mt-3 text-center text-muted">{terms}</p>
         </CtaBar>
