@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
-  BarChart3, Check, ChevronDown, Mail, Menu, ShieldCheck, Sparkles, Zap, X,
+  BarChart3, Check, ChevronDown, Mail, ShieldCheck, Sparkles, Zap, X,
 } from "lucide-react";
 import { AnswerCard, BackButton, Badge, Button, Card, CheckItem, Glow, Logo, Photo, Progress, cx } from "./ui";
 import { AppleIcon, GoogleIcon, PlanIllustration, Squiggle } from "./Illustration";
@@ -40,8 +40,9 @@ export function Landing({ onStart }: { onStart: () => void }) {
   const Headline = (
     <h1 className="t-hero text-white lg:t-hero-d">
       Confident communication starts with
-      <span className="mt-1.5 block">
+      <span className="mt-1.5 flex items-start">
         <span className="inline-block -rotate-2 rounded-[18px] bg-lime px-3.5 pb-1 pt-0.5 text-primary lg:rounded-[22px] lg:px-5 lg:pb-1.5">you.</span>
+        <Squiggle className="ml-1 -mt-1 size-8 lg:hidden" />
       </span>
     </h1>
   );
@@ -75,22 +76,13 @@ export function Landing({ onStart }: { onStart: () => void }) {
 
       {/* Mobile */}
       <div className="relative mx-auto flex min-h-dvh max-w-[480px] flex-col px-5 pt-5 lg:hidden">
-        <div className="flex items-center justify-between">
-          <Logo dark />
-          <Menu size={28} aria-hidden />
-        </div>
+        <Logo dark />
         <div className="mt-4 flex flex-col gap-4">
           {Chip}
-          <div className="relative">
-            {Headline}
-            <Squiggle className="absolute left-[150px] top-[96px] size-10" />
-          </div>
+          {Headline}
           <p className="t-body text-white/80">Build communication skills, understand yourself and others, and create healthy relationships.</p>
         </div>
-        <div className="relative mt-4 h-[250px] flex-1">
-          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="absolute left-0 top-0 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="90px 28px 28px 28px" />
-          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="absolute bottom-0 right-0 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="28px 28px 90px 28px" />
-        </div>
+        <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="mt-7 h-[217px] w-[calc(100%-24px)] shrink-0 border-[3px] border-primary-light" radius="90px 28px 28px 28px" focus="50% 40%" />
         <CtaBar className="from-transparent bg-none">
           <Button variant="lime" onClick={onStart}>Take the quiz — find your path</Button>
           <ul className="mt-5 grid grid-cols-3 gap-2">
