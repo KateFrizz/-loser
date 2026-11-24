@@ -88,8 +88,8 @@ export function Landing({ onStart }: { onStart: () => void }) {
           <p className="t-body text-white/80">Build communication skills, understand yourself and others, and create healthy relationships.</p>
         </div>
         <div className="relative mt-4 h-[250px] flex-1">
-          <Photo src="/img/friends.png" alt="Friends talking at a cafe" className="absolute left-0 top-0 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="90px 28px 28px 28px" />
-          <Photo src="/img/connect.png" alt="Two people talking over coffee" className="absolute bottom-0 right-0 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="28px 28px 90px 28px" />
+          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="absolute left-0 top-0 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="90px 28px 28px 28px" />
+          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="absolute bottom-0 right-0 h-[150px] w-[calc(100%-24px)] border-[3px] border-primary-light" radius="28px 28px 90px 28px" />
         </div>
         <CtaBar className="from-transparent bg-none">
           <Button variant="lime" onClick={onStart}>Take the quiz — find your path</Button>
@@ -118,9 +118,9 @@ export function Landing({ onStart }: { onStart: () => void }) {
         </div>
         <div className="relative h-[660px] w-[640px] shrink-0">
           <Squiggle className="absolute -left-8 top-0 size-12" />
-          <Photo src="/img/man.png" alt="Young man explaining his thoughts" className="absolute left-[380px] top-0 h-[410px] w-[260px] border-4 border-lime" radius="70px 170px 60px 170px" />
-          <Photo src="/img/connect.png" alt="Two people talking over coffee" className="absolute left-10 top-[330px] h-[300px] w-[410px] border-4 border-lime" radius="60px 70px 170px 60px" />
-          <Photo src="/img/friends.png" alt="Friends talking at a cafe" className="absolute left-0 top-10 h-[300px] w-[390px] border-4 border-primary-light" radius="170px 60px 70px 60px" />
+          <Photo src="/img/man.jpg" alt="Young man explaining his thoughts" className="absolute left-[380px] top-0 h-[410px] w-[260px] border-4 border-lime" radius="70px 170px 60px 170px" />
+          <Photo src="/img/connect.jpg" alt="Two people talking over coffee" className="absolute left-10 top-[330px] h-[300px] w-[410px] border-4 border-lime" radius="60px 70px 170px 60px" />
+          <Photo src="/img/friends.jpg" alt="Friends talking at a cafe" className="absolute left-0 top-10 h-[300px] w-[390px] border-4 border-primary-light" radius="170px 60px 70px 60px" />
           <div className="absolute left-[400px] top-[420px] w-[232px] rounded-3xl bg-white/95 p-5 text-primary">
             <BarChart3 size={24} aria-hidden />
             <p className="t-h1-d mt-1">2 min</p>

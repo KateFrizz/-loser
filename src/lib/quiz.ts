@@ -21,7 +21,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     title: "What makes communication hardest for you?",
-    photo: "/img/friends.png",
+    photo: "/img/friends.jpg",
     answers: [
       { label: "I don't know how to start or keep a conversation going", icon: MessageCircle },
       { label: "I'm afraid of being misunderstood or rejected", icon: Zap },
@@ -38,7 +38,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     title: "What result would you like to achieve?",
-    photo: "/img/man.png",
+    photo: "/img/man.jpg",
     answers: [
       { label: "Feel more confident when meeting people", icon: Zap },
       { label: "Express my thoughts and needs more freely", icon: Target },
@@ -115,7 +115,7 @@ export const SEGMENTS: Record<SegmentId, Segment> = {
       "Feel less anxious when meeting someone",
       "Keep a conversation flowing naturally",
     ],
-    photo: "/img/connect.png",
+    photo: "/img/connect.jpg",
     practiceTitle: "Practice a first introduction with AI",
     sender: "AI coach",
     steps: [
@@ -146,7 +146,7 @@ export const SEGMENTS: Record<SegmentId, Segment> = {
       "Put your needs into clear words",
       "Hold your personal boundaries with confidence",
     ],
-    photo: "/img/express.png",
+    photo: "/img/express.jpg",
     practiceTitle: "Practice talking about your needs",
     sender: "AI coach",
     steps: [
@@ -177,7 +177,7 @@ export const SEGMENTS: Record<SegmentId, Segment> = {
       "Better understand their feelings",
       "Discuss disagreements more calmly",
     ],
-    photo: "/img/understand.png",
+    photo: "/img/understand.jpg",
     practiceTitle: "Practice active listening",
     sender: "AI as your partner",
     steps: [

@@ -116,12 +116,12 @@ export function Photo({
   const [failed, setFailed] = useState(false);
   return (
     <div
-      className={cx("relative overflow-hidden bg-gradient-to-br from-primary-light/50 to-lavender", className)}
+      className={cx("overflow-hidden bg-gradient-to-br from-primary-light/50 to-lavender", className)}
       style={{ borderRadius: radius, ...style }}
     >
       {!failed && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} onError={() => setFailed(true)} className="absolute inset-0 size-full object-cover" />
+        <img src={src} alt={alt} onError={() => setFailed(true)} className="block size-full object-cover" />
       )}
     </div>
   );
